@@ -1,0 +1,52 @@
+name: probe3
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          exec > >(tee build.log) 2>&1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq bc flex bison libssl-dev wget git
+          wget -q https://apt.llvm.org/llvm.sh -O /tmp/llvm.sh
+          sudo bash /tmp/llvm.sh 18 >/dev/null
+          export PATH=/usr/lib/llvm-18/bin:$PATH
+          git clone --depth=1 https://github.com/cctv18/android_kernel_common_oneplus_sm8750 -b oneplus/sm8750_b_16.0.0_oneplus_13_6.6.118 k
+          git clone --depth=1 https://github.com/jkHXQ/RMX5010-lz4kds-zram /tmp/lz
+          cd k
+          D=vendor/oplus/kernel/mm
+          mkdir -p $D/hybridswap_zram $D/mm_osvelte $D/mm
+          cp -a /tmp/lz/src/. $D/hybridswap_zram/
+          printf '#ifndef C\n#define C\n#include <linux/types.h>\n#define OPLUS_MM_KOBJ 0\n#define OPLUS_TASK_EZRECLAIMD 1\n#define MM_SCENE_CAMERA 0\nstatic inline bool osvelte_test_scene(int s){return false;}\nstatic inline void *osvelte_read_symbol(int i,bool r){return NULL;}\nstatic inline void osvelte_register_symbol(int i,void *p){}\n#endif\n' > $D/mm_osvelte/common.h
+          printf '#ifndef M\n#define M\n#define COMFD1_KCOMPRESSED 1\nstruct config_kcompressed{bool enable;};\nstatic inline int oplus_test_mm_feature_disable(int i){return 1;}\nstatic inline struct config_kcompressed *oplus_read_mm_config(const char *m){return NULL;}\n#endif\n' > $D/mm_osvelte/mm-config.h
+          printf '#ifndef T\n#define T\n#endif\n' > $D/mm_osvelte/mm-trace.h
+          printf '#ifndef S\n#define S\n#endif\n' > $D/mm_osvelte/sys-memstat.h
+          printf '#include "../../../../../mm/internal.h"\n#include <linux/mm.h>\n#include <linux/swap.h>\n' > $D/mm/internal.h
+          echo 'obj-$(CONFIG_HYBRIDSWAP_ZRAM) += hybridswap_zram/' > $D/Makefile
+          echo 'obj-y += mm/' > vendor/oplus/kernel/Makefile
+          echo 'obj-y += kernel/' > vendor/oplus/Makefile
+          echo 'obj-y += vendor/oplus/' >> Makefile
+          make ARCH=arm64 LLVM=1 defconfig
+          scripts/config --module HYBRIDSWAP_ZRAM --disable HYBRID_ZSMALLOC --disable KCOMPRESSD --disable HYBRIDSWAP --disable OPLUS_FEATURE_MM_OSVELTE
+          make ARCH=arm64 LLVM=1 olddefconfig
+          make -j4 ARCH=arm64 LLVM=1 KBUILD_MODPOST_WARN=1 M=$D/hybridswap_zram modules
+      - name: publish log
+        if: always()
+        run: |
+          ls -l build.log || echo "no log produced" > build.log
+          mkdir -p pub && cd pub
+          git init -q
+          git config user.email ci@local
+          git config user.name ci
+          cp ../build.log .
+          git checkout -q -b probe-log
+          git add build.log
+          git commit -qm log || true
+          git push -f -q https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git probe-log || true

@@ -1,0 +1,149 @@
+Ubuntu clang version 18.1.3 (1ubuntu1)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/lib/llvm-18/bin
+Cloning into 'k'...
+Updating files:  34% (28042/82454)Updating files:  35% (28859/82454)Updating files:  36% (29684/82454)Updating files:  37% (30508/82454)Updating files:  38% (31333/82454)Updating files:  39% (32158/82454)Updating files:  40% (32982/82454)Updating files:  40% (33729/82454)Updating files:  41% (33807/82454)Updating files:  42% (34631/82454)Updating files:  43% (35456/82454)Updating files:  44% (36280/82454)Updating files:  45% (37105/82454)Updating files:  46% (37929/82454)Updating files:  47% (38754/82454)Updating files:  48% (39578/82454)Updating files:  49% (40403/82454)Updating files:  50% (41227/82454)Updating files:  51% (42052/82454)Updating files:  52% (42877/82454)Updating files:  53% (43701/82454)Updating files:  54% (44526/82454)Updating files:  55% (45350/82454)Updating files:  56% (46175/82454)Updating files:  57% (46999/82454)Updating files:  58% (47824/82454)Updating files:  59% (48648/82454)Updating files:  60% (49473/82454)Updating files:  60% (49900/82454)Updating files:  61% (50297/82454)Updating files:  62% (51122/82454)Updating files:  63% (51947/82454)Updating files:  64% (52771/82454)Updating files:  65% (53596/82454)Updating files:  66% (54420/82454)Updating files:  67% (55245/82454)Updating files:  68% (56069/82454)Updating files:  69% (56894/82454)Updating files:  70% (57718/82454)Updating files:  71% (58543/82454)Updating files:  72% (59367/82454)Updating files:  73% (60192/82454)Updating files:  74% (61016/82454)Updating files:  75% (61841/82454)Updating files:  76% (62666/82454)Updating files:  77% (63490/82454)Updating files:  78% (64315/82454)Updating files:  79% (65139/82454)Updating files:  80% (65964/82454)Updating files:  81% (66788/82454)Updating files:  82% (67613/82454)Updating files:  82% (68171/82454)Updating files:  83% (68437/82454)Updating files:  84% (69262/82454)Updating files:  85% (70086/82454)Updating files:  86% (70911/82454)Updating files:  87% (71735/82454)Updating files:  88% (72560/82454)Updating files:  89% (73385/82454)Updating files:  90% (74209/82454)Updating files:  91% (75034/82454)Updating files:  92% (75858/82454)Updating files:  93% (76683/82454)Updating files:  94% (77507/82454)Updating files:  95% (78332/82454)Updating files:  96% (79156/82454)Updating files:  97% (79981/82454)Updating files:  98% (80805/82454)Updating files:  99% (81630/82454)Updating files: 100% (82454/82454)Updating files: 100% (82454/82454), done.
+Cloning into '/tmp/lz'...
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  HOSTCC  scripts/kconfig/confdata.o
+  HOSTCC  scripts/kconfig/expr.o
+  LEX     scripts/kconfig/lexer.lex.c
+  YACC    scripts/kconfig/parser.tab.[ch]
+  HOSTCC  scripts/kconfig/lexer.lex.o
+  HOSTCC  scripts/kconfig/menu.o
+  HOSTCC  scripts/kconfig/parser.tab.o
+  HOSTCC  scripts/kconfig/preprocess.o
+  HOSTCC  scripts/kconfig/symbol.o
+  HOSTCC  scripts/kconfig/util.o
+  HOSTLD  scripts/kconfig/conf
+*** Default configuration is based on 'defconfig'
+#
+# configuration written to .config
+#
+#
+# configuration written to .config
+#
+  SYNC    include/config/auto.conf.cmd
+  HOSTCC  arch/arm64/tools/gen-hyprel
+  WRAP    arch/arm64/include/generated/uapi/asm/kvm_para.h
+  WRAP    arch/arm64/include/generated/uapi/asm/errno.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ioctl.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ioctls.h
+  WRAP    arch/arm64/include/generated/uapi/asm/ipcbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/msgbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/poll.h
+  WRAP    arch/arm64/include/generated/uapi/asm/resource.h
+  WRAP    arch/arm64/include/generated/uapi/asm/sembuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/shmbuf.h
+  WRAP    arch/arm64/include/generated/uapi/asm/siginfo.h
+  WRAP    arch/arm64/include/generated/uapi/asm/socket.h
+  WRAP    arch/arm64/include/generated/uapi/asm/sockios.h
+  WRAP    arch/arm64/include/generated/uapi/asm/stat.h
+  WRAP    arch/arm64/include/generated/uapi/asm/swab.h
+  WRAP    arch/arm64/include/generated/uapi/asm/termbits.h
+  WRAP    arch/arm64/include/generated/uapi/asm/termios.h
+  WRAP    arch/arm64/include/generated/uapi/asm/types.h
+  UPD     include/generated/uapi/linux/version.h
+  UPD     include/config/kernel.release
+  HOSTCC  scripts/dtc/dtc.o
+  UPD     include/generated/compile.h
+  WRAP    arch/arm64/include/generated/asm/early_ioremap.h
+  WRAP    arch/arm64/include/generated/asm/mcs_spinlock.h
+  WRAP    arch/arm64/include/generated/asm/qrwlock.h
+  WRAP    arch/arm64/include/generated/asm/qspinlock.h
+  WRAP    arch/arm64/include/generated/asm/parport.h
+  WRAP    arch/arm64/include/generated/asm/user.h
+  WRAP    arch/arm64/include/generated/asm/bugs.h
+  WRAP    arch/arm64/include/generated/asm/delay.h
+  WRAP    arch/arm64/include/generated/asm/div64.h
+  WRAP    arch/arm64/include/generated/asm/dma-mapping.h
+  WRAP    arch/arm64/include/generated/asm/dma.h
+  WRAP    arch/arm64/include/generated/asm/emergency-restart.h
+  WRAP    arch/arm64/include/generated/asm/hw_irq.h
+  WRAP    arch/arm64/include/generated/asm/irq_regs.h
+  WRAP    arch/arm64/include/generated/asm/kdebug.h
+  WRAP    arch/arm64/include/generated/asm/kmap_size.h
+  WRAP    arch/arm64/include/generated/asm/local.h
+  WRAP    arch/arm64/include/generated/asm/local64.h
+  WRAP    arch/arm64/include/generated/asm/mmiowb.h
+  WRAP    arch/arm64/include/generated/asm/msi.h
+  WRAP    arch/arm64/include/generated/asm/serial.h
+  WRAP    arch/arm64/include/generated/asm/softirq_stack.h
+  WRAP    arch/arm64/include/generated/asm/switch_to.h
+  WRAP    arch/arm64/include/generated/asm/trace_clock.h
+  WRAP    arch/arm64/include/generated/asm/unaligned.h
+  WRAP    arch/arm64/include/generated/asm/vga.h
+  HOSTCC  scripts/dtc/flattree.o
+  UPD     include/generated/utsrelease.h
+  HOSTCC  scripts/dtc/fstree.o
+  HOSTCC  scripts/dtc/data.o
+  HOSTCC  scripts/dtc/livetree.o
+  HOSTCC  scripts/dtc/treesource.o
+  HOSTCC  scripts/dtc/srcpos.o
+  HOSTCC  scripts/dtc/checks.o
+  HOSTCC  scripts/dtc/util.o
+  LEX     scripts/dtc/dtc-lexer.lex.c
+  YACC    scripts/dtc/dtc-parser.tab.[ch]
+  HOSTCC  scripts/dtc/libfdt/fdt.o
+  HOSTCC  scripts/dtc/libfdt/fdt_ro.o
+  HOSTCC  scripts/dtc/libfdt/fdt_wip.o
+  HOSTCC  scripts/dtc/libfdt/fdt_sw.o
+  HOSTCC  scripts/dtc/libfdt/fdt_rw.o
+  HOSTCC  scripts/dtc/libfdt/fdt_strerror.o
+  HOSTCC  scripts/dtc/libfdt/fdt_empty_tree.o
+  HOSTCC  scripts/dtc/libfdt/fdt_addresses.o
+  HOSTCC  scripts/dtc/libfdt/fdt_overlay.o
+  HOSTCC  scripts/dtc/fdtoverlay.o
+  HOSTCC  scripts/dtc/dtc-lexer.lex.o
+  HOSTCC  scripts/dtc/dtc-parser.tab.o
+  HOSTLD  scripts/dtc/fdtoverlay
+  HOSTLD  scripts/dtc/dtc
+  HOSTCC  scripts/kallsyms
+  HOSTCC  scripts/sorttable
+  HOSTCC  scripts/asn1_compiler
+  GEN     arch/arm64/include/generated/asm/cpucaps.h
+  GEN     arch/arm64/include/generated/asm/sysreg-defs.h
+  CC      scripts/mod/empty.o
+  HOSTCC  scripts/mod/mk_elfconfig
+  CC      scripts/mod/devicetable-offsets.s
+  UPD     scripts/mod/devicetable-offsets.h
+  MKELF   scripts/mod/elfconfig.h
+  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/mod/file2alias.o
+  HOSTCC  scripts/mod/sumversion.o
+  HOSTCC  scripts/mod/symsearch.o
+  HOSTLD  scripts/mod/modpost
+  CC      kernel/bounds.s
+  CHKSHA1 include/linux/atomic/atomic-arch-fallback.h
+  CHKSHA1 include/linux/atomic/atomic-instrumented.h
+  UPD     include/generated/timeconst.h
+  CHKSHA1 include/linux/atomic/atomic-long.h
+  UPD     include/generated/bounds.h
+  CC      arch/arm64/kernel/asm-offsets.s
+  UPD     include/generated/asm-offsets.h
+  CALL    scripts/checksyscalls.sh
+  LDS     arch/arm64/kernel/vdso/vdso.lds
+  CC      arch/arm64/kernel/vdso/vgettimeofday.o
+  AS      arch/arm64/kernel/vdso/note.o
+  AS      arch/arm64/kernel/vdso/sigreturn.o
+  LD      arch/arm64/kernel/vdso/vdso.so.dbg
+  VDSOSYM include/generated/vdso-offsets.h
+  OBJCOPY arch/arm64/kernel/vdso/vdso.so
+  LDS     arch/arm64/kernel/vdso32/vdso.lds
+  CC32    arch/arm64/kernel/vdso32/note.o
+  CC32    arch/arm64/kernel/vdso32/vgettimeofday.o
+  HOSTCC  arch/arm64/kernel/vdso32/../../../arm/vdso/vdsomunge
+  LD32    arch/arm64/kernel/vdso32/vdso.so.raw
+  MUNGE   arch/arm64/kernel/vdso32/vdso.so.dbg
+  VDSOSYM include/generated/vdso32-offsets.h
+  OBJCOPY arch/arm64/kernel/vdso32/vdso.so
+  CALL    scripts/checksyscalls.sh
+  LDS     scripts/module.lds
+  MODPOST vendor/oplus/kernel/mm/hybridswap_zram/Module.symvers
+WARNING: Module.symvers is missing.
+         Modules may not have dependencies or modversions.
+         You may get many unresolved symbol errors.
+         You can set KBUILD_MODPOST_WARN=1 to turn errors into warning
+         if you want to proceed at your own risk.
